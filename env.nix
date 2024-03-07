@@ -5,8 +5,10 @@ pkgs.buildEnv {
   paths = with pkgs; [
     colima
     direnv
+    docker
     git
     k9s
+    kubectl
     nixpkgs-fmt
     starship
   ];
