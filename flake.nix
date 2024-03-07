@@ -14,6 +14,6 @@
           myEnv = import ./env.nix { inherit pkgs; };
         in
         {
-          packages.${system}.default = myEnv;
+          packages.default = myEnv;
         });
 }
