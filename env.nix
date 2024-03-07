@@ -5,6 +5,7 @@ pkgs.buildEnv {
   paths = with pkgs; [
     direnv
     git
+    k9s
     nixpkgs-fmt
     starship
   ];
