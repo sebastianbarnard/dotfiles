@@ -3,6 +3,7 @@
 pkgs.buildEnv {
   name = "My dev environment";
   paths = with pkgs; [
+    colima
     direnv
     git
     k9s

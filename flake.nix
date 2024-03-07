@@ -1,11 +1,10 @@
 {
   inputs = {
-    nixpkgs.follows = "nix-vscode-extensions/nixpkgs";
-    flake-utils.follows = "nix-vscode-extensions/flake-utils";
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils, nix-vscode-extensions }:
+  outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem
       (system:
         let
