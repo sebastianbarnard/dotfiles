@@ -5,6 +5,7 @@ let
   vscodiumWithExtensions = vscode-with-extensions.override {
     vscode = vscodium;
     vscodeExtensions = with pkgs.vscode-marketplace; [
+      catppuccin.catppuccin-vsc-icons
       dracula-theme.theme-dracula
       jnoortheen.nix-ide
       mkhl.direnv
@@ -21,6 +22,7 @@ pkgs.buildEnv {
     git
     k9s
     kubectl
+    kubernetes-helm
     nixpkgs-fmt
     starship
     vscodiumWithExtensions
