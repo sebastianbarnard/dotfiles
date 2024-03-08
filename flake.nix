@@ -2,17 +2,21 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem
+  outputs = inputs:
+    inputs.flake-utils.lib.eachDefaultSystem
       (system:
         let
-          pkgs = nixpkgs.legacyPackages.${system};
+          pkgs = inputs.nixpkgs.legacyPackages.${system}.extend inputs.nix-vscode-extensions.overlays.default;
 
-          myEnv = import ./env.nix { inherit pkgs; };
+          myEnv = import ./env.nix {
+            inherit pkgs;
+          };
         in
         {
           packages.default = myEnv;
-        });
+        }
+      );
 }

@@ -1,7 +1,19 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
+let
+  inherit (pkgs) vscode-with-extensions vscodium;
+
+  vscodiumWithExtensions = vscode-with-extensions.override {
+    vscode = vscodium;
+    vscodeExtensions = with pkgs.vscode-marketplace; [
+      dracula-theme.theme-dracula
+      jnoortheen.nix-ide
+      mkhl.direnv
+    ];
+  };
+in
 
 pkgs.buildEnv {
-  name = "My dev environment";
+  name = "my dev environment";
   paths = with pkgs; [
     colima
     direnv
@@ -11,5 +23,6 @@ pkgs.buildEnv {
     kubectl
     nixpkgs-fmt
     starship
+    vscodiumWithExtensions
   ];
 }
