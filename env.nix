@@ -9,6 +9,8 @@ let
       dracula-theme.theme-dracula
       jnoortheen.nix-ide
       mkhl.direnv
+      rust-lang.rust-analyzer
+      humao.rest-client
     ];
   };
 in
