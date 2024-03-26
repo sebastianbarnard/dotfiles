@@ -27,6 +27,5 @@ pkgs.buildEnv {
     kubernetes-helm
     nixpkgs-fmt
     starship
-    vscodiumWithExtensions
   ];
 }
