@@ -14,6 +14,13 @@
             inherit pkgs;
           };
 
+          alacrittyConfig = pkgs.fetchurl
+            {
+              url = "https://raw.githubusercontent.com/MasterOfPoppets/dotfiles/main/alacritty.toml";
+              sha256 = "sha256-oBaVVM/4SRfuQLV67JNDEqF5p4amihn5U+L2Z6zdhNM=";
+
+            };
+
           starshipConfig = pkgs.fetchurl
             {
               url = "https://raw.githubusercontent.com/MasterOfPoppets/dotfiles/main/starship.toml";
@@ -22,6 +29,7 @@
 
           applyConfig = pkgs.writeShellScriptBin "apply-config" ''
             echo "Applying configuration..."
+            cp ${alacrittyConfig} ~/.config/alacritty/alacritty.toml
             cp ${starshipConfig} ~/.config/starship.toml
           '';
         in
