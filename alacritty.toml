@@ -5,5 +5,6 @@ decorations = "Buttonless"
 padding = { x = 12, y = 12 }
 
 [font]
+normal = { family = "Iosevka", style = "Regular" }
 size = 14
 
