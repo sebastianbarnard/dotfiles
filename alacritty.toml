@@ -1,3 +1,5 @@
+live_config_reload = true
+
 [window]
 decorations = "Buttonless"
 padding = { x = 12, y = 12 }

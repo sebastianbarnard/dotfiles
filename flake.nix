@@ -30,10 +30,8 @@
           applyConfig = pkgs.writeShellScriptBin "apply-config" ''
             echo "Applying configuration..."
 
-            mkdir -p ~/.config
-
-            mkdir -p ~/.config/alacritty
-            cp ${alacrittyConfig} ~/.config/alacritty/alacritty.toml
+            mkdir -pv ~/.config/alacritty
+            ln -sf ${alacrittyConfig} ~/.config/alacritty/alacritty.toml
 
             cp ${starshipConfig} ~/.config/starship.toml
           '';
