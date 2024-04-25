@@ -17,7 +17,7 @@
           alacrittyConfig = pkgs.fetchurl
             {
               url = "https://raw.githubusercontent.com/MasterOfPoppets/dotfiles/main/alacritty.toml";
-              sha256 = "";
+              sha256 = "sha256-NAlTtFqosgyTdOPDSJ+GJUCpjq/VewZMyejUEOzF0JE=";
 
             };
 
