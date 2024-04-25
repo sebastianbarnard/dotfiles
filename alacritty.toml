@@ -5,5 +5,5 @@ decorations = "Buttonless"
 padding = { x = 12, y = 12 }
 
 [font]
-size = 14
+size = 15
 
