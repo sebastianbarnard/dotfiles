@@ -14,12 +14,13 @@
             inherit pkgs;
           };
 
-          alacrittyConfig = pkgs.fetchurl
-            {
-              url = "https://raw.githubusercontent.com/MasterOfPoppets/dotfiles/main/alacritty.toml";
-              sha256 = "";
+          alacrittyConfig = pkgs.writeText "alacritty.toml" (builtins.readFile ./alacritty.toml);
+          # alacrittyConfig = pkgs.fetchurl
+          #   {
+          #     url = "https://raw.githubusercontent.com/MasterOfPoppets/dotfiles/main/alacritty.toml";
+          #     sha256 = "sha256-AcpSAKYeq+dvWS6mLLOItzVED08wfApAfJYntSau2q4=";
 
-            };
+          #   };
 
           starshipConfig = pkgs.fetchurl
             {
