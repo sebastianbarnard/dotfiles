@@ -31,6 +31,7 @@
 
             mkdir -pv ~/.config/nvim
             ln -sf ${nvimConfig}/init.lua ~/.config/nvim/init.lua
+            ln -sf ${nvimConfig}/lua/vim-options.lua ~/.config/nvim/lua/vim-options.lua
             mkdir -pv ~/.config/nvim/lua/plugins
             for file in ${nvimConfig}/lua/plugins/*; do
               ln -sf "$file" ~/.config/nvim/lua/plugins/
