@@ -50,7 +50,7 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 
 local config = require("nvim-treesitter.configs")
 config.setup({
-  ensure_installed = { "lua", "nix", "toml" },
+  ensure_installed = { "lua", "nix", "toml", "typescript" },
   highlight = { enable = true },
   indent = { enable = true }
 })
