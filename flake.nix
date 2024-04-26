@@ -30,12 +30,16 @@
             ln -sf ${starshipConfig} ~/.config/starship.toml
 
             mkdir -pv ~/.config/nvim
-            ln -sf ${nvimConfig}/* ~/.config/nvim/
+            ln -sf ${nvimConfig}/init.lua ~/.config/nvim/init.lua
+            mkdir -pv ~/.config/nvim/lua/plugins
+            for file in ${nvimConfig}/lua/plugins/*; do
+              ln -sf "$file" ~/.config/nvim/lua/plugins/
+            done
           '';
         in
         {
           packages = {
-            inherit myEnv applyConfig;
+            inherit myEnv nvimConfig applyConfig;
             default = myEnv;
           };
         }
