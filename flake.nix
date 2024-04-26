@@ -15,18 +15,11 @@
           };
 
           alacrittyConfig = pkgs.writeText "alacritty.toml" (builtins.readFile ./alacritty.toml);
-          # alacrittyConfig = pkgs.fetchurl
-          #   {
-          #     url = "https://raw.githubusercontent.com/MasterOfPoppets/dotfiles/main/alacritty.toml";
-          #     sha256 = "sha256-AcpSAKYeq+dvWS6mLLOItzVED08wfApAfJYntSau2q4=";
-
-          #   };
-
-          starshipConfig = pkgs.fetchurl
-            {
-              url = "https://raw.githubusercontent.com/MasterOfPoppets/dotfiles/main/starship.toml";
-              sha256 = "sha256-oBaVVM/4SRfuQLV67JNDEqF5p4amihn5U+L2Z6zdhNM=";
-            };
+          starshipConfig = pkgs.writeText "starship.toml" (builtins.readFile ./starship.toml);
+          nvimConfig = pkgs.runCommand "nvim-config" { } ''
+            mkdir -p $out
+            cp -r ${./nvim}/* $out
+          '';
 
           applyConfig = pkgs.writeShellScriptBin "apply-config" ''
             echo "Applying configuration..."
@@ -34,7 +27,10 @@
             mkdir -pv ~/.config/alacritty
             ln -sf ${alacrittyConfig} ~/.config/alacritty/alacritty.toml
 
-            cp ${starshipConfig} ~/.config/starship.toml
+            ln -sf ${starshipConfig} ~/.config/starship.toml
+
+            mkdir -pv ~/.config/nvim
+            ln -sf ${nvimConfig}/* ~/.config/nvim/
           '';
         in
         {

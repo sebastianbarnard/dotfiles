@@ -8,6 +8,8 @@ pkgs.buildEnv {
     colima
     direnv
     docker
+    fd
+    gcc
     git
     httpie
     iosevka
@@ -17,6 +19,7 @@ pkgs.buildEnv {
     neovim
     nixpkgs-fmt
     qemu
+    ripgrep
     starship
   ];
 }
