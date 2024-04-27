@@ -12,10 +12,10 @@ pkgs.buildEnv {
     gcc
     git
     httpie
-    iosevka
     k9s
     kubectl
     kubernetes-helm
+    lazygit
     neovim
     nixpkgs-fmt
     qemu

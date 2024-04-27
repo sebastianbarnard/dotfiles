@@ -4,7 +4,10 @@ return {
   priority = 1000,
   config = function()
     require("catppuccin").setup({
-      flavour = "macchiato"
+      flavour = "macchiato",
+      integrations = {
+        neotree = true
+      }
     })
     vim.cmd.colorscheme "catppuccin"
   end
