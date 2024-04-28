@@ -43,6 +43,15 @@
             inherit myEnv nvimConfig applyConfig;
             default = myEnv;
           };
+
+          devShells.default = pkgs.mkShell {
+            name = "dotfiles";
+
+            packages = with pkgs; [
+              nixpkgs-fmt
+              stylua
+            ];
+          };
         }
       );
 }
