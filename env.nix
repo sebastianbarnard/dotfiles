@@ -18,6 +18,7 @@ pkgs.buildEnv {
     lazygit
     neovim
     nixpkgs-fmt
+    nodejs_20
     qemu
     ripgrep
     starship
