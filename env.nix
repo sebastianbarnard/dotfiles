@@ -5,6 +5,7 @@ pkgs.buildEnv {
   name = "my dev environment";
   paths = with pkgs; [
     alacritty
+    awscli2
     colima
     direnv
     docker
@@ -22,5 +23,6 @@ pkgs.buildEnv {
     qemu
     ripgrep
     starship
+    zellij
   ];
 }
