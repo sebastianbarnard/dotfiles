@@ -14,6 +14,7 @@ pkgs.buildEnv {
     git
     httpie
     k9s
+    kitty
     kubectl
     kubernetes-helm
     lazygit
