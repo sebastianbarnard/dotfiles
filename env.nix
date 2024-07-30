@@ -24,5 +24,6 @@ pkgs.buildEnv {
     qemu
     ripgrep
     starship
+    terraform
   ];
 }

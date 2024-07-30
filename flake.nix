@@ -8,7 +8,10 @@
     inputs.flake-utils.lib.eachDefaultSystem
       (system:
         let
-          pkgs = import nixpkgs { inherit system; };
+          pkgs = import nixpkgs { 
+            inherit system;
+            config.allowUnfree = true;
+          };
 
           myEnv = import ./env.nix {
             inherit pkgs;
