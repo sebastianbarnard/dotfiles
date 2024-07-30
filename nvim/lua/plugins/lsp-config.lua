@@ -8,7 +8,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "jdtls", "lua_ls", "rust_analyzer", "tsserver" },
+      ensure_installed = { "jdtls", "lua_ls", "rust_analyzer", "terraformls", "tsserver" },
     },
   },
   {
@@ -19,6 +19,7 @@ return {
       lspconfig.jdtls.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+      lspconfig.terraformls.setup{}
       lspconfig.tsserver.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
