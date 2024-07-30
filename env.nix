@@ -4,7 +4,6 @@
 pkgs.buildEnv {
   name = "my dev environment";
   paths = with pkgs; [
-    alacritty
     awscli2
     colima
     direnv
@@ -25,6 +24,5 @@ pkgs.buildEnv {
     qemu
     ripgrep
     starship
-    zellij
   ];
 }
