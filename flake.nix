@@ -14,22 +14,21 @@
           myEnv = import ./env.nix {
             inherit pkgs;
           };
-          warpShell = import ./warp-shell.nix;
         in
         {
           packages = {
             inherit myEnv;
             default = myEnv;
           };
-          devShells = {
-            default = pkgs.mkShell {
-              name = "dotfiles";
-              packages = with pkgs; [
-                nixpkgs-fmt
-                stylua
-              ];
-            };
-            warp = warpShell;
+          devShells.default = pkgs.mkShell {
+            name = "dotfiles";
+            packages = with pkgs; [
+              nixpkgs-fmt
+              stylua
+            ];
+            shellHook = ''
+              export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath myEnv.paths}:$LD_LIBRARY_PATH
+            '';
           };
         }
       );
