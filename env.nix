@@ -11,7 +11,6 @@ pkgs.buildEnv {
     k3d
     k9s
     kubectl
-    jetbrains-toolbox
     kubernetes-helm
     nixpkgs-fmt
     fnm
