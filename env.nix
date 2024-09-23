@@ -18,5 +18,12 @@ pkgs.buildEnv {
     python3
     terraform
     warp-terminal
+    mesa.drivers
+    vulkan-tools
+    libGL
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXrandr
+    xorg.libXi
   ];
 }
