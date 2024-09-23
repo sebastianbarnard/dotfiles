@@ -3,6 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
+
   outputs = { self, nixpkgs, ... } @ inputs:
     inputs.flake-utils.lib.eachDefaultSystem
       (system:
@@ -11,6 +12,7 @@
             inherit system;
             config.allowUnfree = true;
           };
+
           myEnv = import ./env.nix {
             inherit pkgs;
           };
@@ -20,15 +22,14 @@
             inherit myEnv;
             default = myEnv;
           };
+
           devShells.default = pkgs.mkShell {
             name = "dotfiles";
+
             packages = with pkgs; [
               nixpkgs-fmt
               stylua
             ];
-            shellHook = ''
-              export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath myEnv.paths}:$LD_LIBRARY_PATH
-            '';
           };
         }
       );
