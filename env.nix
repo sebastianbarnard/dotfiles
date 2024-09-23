@@ -8,9 +8,10 @@ pkgs.buildEnv {
     direnv
     docker
     git
+    k3d
     k9s
-    kitty
     kubectl
+    jetbrains-toolbox
     kubernetes-helm
     nixpkgs-fmt
     fnm
