@@ -15,6 +15,6 @@ pkgs.buildEnv {
     fnm
     python3
     terraform
-    neofetch
+    fastfetch
   ];
 }
