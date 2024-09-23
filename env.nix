@@ -6,7 +6,6 @@ pkgs.buildEnv {
   paths = with pkgs; [
     awscli2
     direnv
-    docker
     git
     k3d
     k9s
