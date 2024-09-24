@@ -16,6 +16,5 @@ pkgs.buildEnv {
     python3
     terraform
     fastfetch
-    neofetch
   ];
 }
