@@ -8,7 +8,6 @@ pkgs.buildEnv {
     direnv
     git
     k3d
-    k9s
     kubectl
     kubernetes-helm
     nixpkgs-fmt
